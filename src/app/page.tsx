@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Flag, Calendar, Users, Utensils } from "lucide-react"
-import { NorwegianFlag } from "@/components/norwegian-flag"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Flag, Calendar, Users, Utensils } from "lucide-react";
+import { NorwegianFlag } from "@/components/norwegian-flag";
 
 export default function Home() {
   return (
@@ -14,24 +14,28 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-norway-red/10 px-3 py-1 text-sm text-norway-red">
-                  17. Mai Celebration
+                  17. Mai Feiring
                 </div>
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-norway-red">
-                  Norwegian National Day
+                  Norges Nasjonaldag
                 </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Join us in celebrating Norway's Constitution Day with a festive tapas-style gathering for 20 people.
+                  Bli med og feir Norges grunnlovsdag med en nydelig frokost for
+                  20 personer.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link href="/login">
-                  <Button size="lg" className="bg-norway-red hover:bg-norway-red/90">
-                    Join the Celebration
+                  <Button
+                    size="lg"
+                    className="bg-norway-red hover:bg-norway-red/90"
+                  >
+                    Bli med på feiringen
                   </Button>
                 </Link>
                 <Link href="#about">
                   <Button size="lg" variant="outline">
-                    Learn More
+                    Les mer
                   </Button>
                 </Link>
               </div>
@@ -55,14 +59,14 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-norway-blue text-white">
-                About the Event
+                Om Arrangementet
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-norway-blue">
-                Tapas-Style Celebration
+                Tapas-Feiring
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Our 17th of May celebration will feature a variety of traditional Norwegian dishes. We need your help to
-                make this happen!
+                17. mai feiringen vår vil by på et utvalg tradisjonelle norske
+                retter. Vi trenger din hjelp for å få det til!
               </p>
             </div>
           </div>
@@ -72,8 +76,10 @@ export default function Home() {
                 <Calendar className="h-6 w-6" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold">Event Date</h3>
-                <p className="text-gray-500 dark:text-gray-400">May 17th, 2025 - Norway's Constitution Day</p>
+                <h3 className="text-xl font-bold">Dato for Arrangementet</h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  17. mai 2025 – Norges Grunnlovsdag
+                </p>
               </div>
             </div>
             <div className="flex flex-col justify-center space-y-4">
@@ -81,9 +87,9 @@ export default function Home() {
                 <Users className="h-6 w-6" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold">Participants</h3>
+                <h3 className="text-xl font-bold">Deltakere</h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  A gathering of 20 people celebrating Norwegian heritage
+                  En samling på 20 personer som feirer norsk kulturarv
                 </p>
               </div>
             </div>
@@ -92,9 +98,9 @@ export default function Home() {
                 <Utensils className="h-6 w-6" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold">Food Style</h3>
+                <h3 className="text-xl font-bold">Matstil</h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  Tapas-style with a variety of traditional Norwegian dishes
+                  Tapasstil med et utvalg av tradisjonelle norske retter
                 </p>
               </div>
             </div>
@@ -108,17 +114,21 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-norway-red">
-                Ready to Join the Celebration?
+                Klar for å bli med på feiringen?
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Sign up now to select which dishes you'd like to bring to our Norwegian National Day celebration.
+                Meld deg på nå for å velge hvilke retter du vil ta med til vår
+                feiring av nasjonaldagen.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Link href="/login">
-                <Button size="lg" className="bg-norway-red hover:bg-norway-red/90">
+                <Button
+                  size="lg"
+                  className="bg-norway-red hover:bg-norway-red/90"
+                >
                   <Flag className="mr-2 h-4 w-4" />
-                  Get Started
+                  Kom i gang
                 </Button>
               </Link>
             </div>
@@ -126,5 +136,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }

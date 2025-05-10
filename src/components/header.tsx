@@ -1,23 +1,28 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { signOut, useSession } from "next-auth/react"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { LogOut, Menu, User } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { NorwegianFlag } from "./norwegian-flag"
-import { cn } from "@/lib/utils"
-import { usePathname } from "next/navigation"
+import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { LogOut, Menu, User } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { NorwegianFlag } from "./norwegian-flag";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Dashboard", href: "/dashboard" },
-]
+];
 
 export function Header() {
-  const { data: session } = useSession()
-  const pathname = usePathname()
+  const { data: session } = useSession();
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -25,7 +30,9 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
             <NorwegianFlag className="h-8 w-12" />
-            <span className="hidden font-bold text-xl text-norway-red sm:inline-block">Syttende Mai</span>
+            <span className="hidden font-bold text-xl text-norway-red sm:inline-block">
+              Syttende Mai
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 ml-6">
@@ -35,7 +42,9 @@ export function Header() {
                 href={item.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-norway-red",
-                  pathname === item.href ? "text-norway-red" : "text-muted-foreground",
+                  pathname === item.href
+                    ? "text-norway-red"
+                    : "text-muted-foreground"
                 )}
               >
                 {item.name}
@@ -48,29 +57,35 @@ export function Header() {
           {session ? (
             <>
               <p className="hidden text-sm text-muted-foreground md:block mr-2">
-                Welcome, {session.user.name || session.user.email}
+                Velkommen, {session.user.name || session.user.email}
               </p>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon" className="rounded-full">
                     <User className="h-5 w-5" />
-                    <span className="sr-only">User menu</span>
+                    <span className="sr-only">Brukermeny</span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuItem asChild>
-                    <Link href="/dashboard">Dashboard</Link>
+                    <Link href="/dashboard">Dashbord</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}>
+                  <DropdownMenuItem
+                    onClick={() => signOut({ callbackUrl: "/" })}
+                  >
                     <LogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
+                    <span>Logg ut</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </>
           ) : (
-            <Button asChild variant="default" className="bg-norway-red hover:bg-norway-red/90">
-              <Link href="/login">Log in</Link>
+            <Button
+              asChild
+              variant="default"
+              className="bg-norway-red hover:bg-norway-red/90"
+            >
+              <Link href="/login">Logg inn</Link>
             </Button>
           )}
 
@@ -78,7 +93,7 @@ export function Header() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
+                <span className="sr-only">Vis meny</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
@@ -89,16 +104,22 @@ export function Header() {
                     href={item.href}
                     className={cn(
                       "text-sm font-medium transition-colors hover:text-norway-red",
-                      pathname === item.href ? "text-norway-red" : "text-muted-foreground",
+                      pathname === item.href
+                        ? "text-norway-red"
+                        : "text-muted-foreground"
                     )}
                   >
                     {item.name}
                   </Link>
                 ))}
                 {session && (
-                  <Button variant="ghost" className="justify-start px-2" onClick={() => signOut({ callbackUrl: "/" })}>
+                  <Button
+                    variant="ghost"
+                    className="justify-start px-2"
+                    onClick={() => signOut({ callbackUrl: "/" })}
+                  >
                     <LogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
+                    <span>Logg ut</span>
                   </Button>
                 )}
               </div>
@@ -107,5 +128,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
