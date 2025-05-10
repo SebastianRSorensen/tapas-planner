@@ -1,103 +1,130 @@
-import Image from "next/image";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Flag, Calendar, Users, Utensils } from "lucide-react"
+import { NorwegianFlag } from "@/components/norwegian-flag"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="norwegian-pattern">
+      {/* Hero Section */}
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white/20 pointer-events-none" />
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-norway-red/10 px-3 py-1 text-sm text-norway-red">
+                  17. Mai Celebration
+                </div>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-norway-red">
+                  Norwegian National Day
+                </h1>
+                <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+                  Join us in celebrating Norway's Constitution Day with a festive tapas-style gathering for 20 people.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Link href="/login">
+                  <Button size="lg" className="bg-norway-red hover:bg-norway-red/90">
+                    Join the Celebration
+                  </Button>
+                </Link>
+                <Link href="#about">
+                  <Button size="lg" variant="outline">
+                    Learn More
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="relative h-[250px] w-[350px] md:h-[350px] md:w-[450px] lg:h-[400px] lg:w-[500px]">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[1.75] md:scale-[2]">
+                  <NorwegianFlag className="h-32 w-48 shadow-xl" />
+                </div>
+                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-norway-blue/10 md:h-32 md:w-32" />
+                <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-full bg-norway-red/10 md:h-32 md:w-32" />
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Features Section */}
+      <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-norway-blue text-white">
+                About the Event
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-norway-blue">
+                Tapas-Style Celebration
+              </h2>
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Our 17th of May celebration will feature a variety of traditional Norwegian dishes. We need your help to
+                make this happen!
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-norway-red/10 text-norway-red">
+                <Calendar className="h-6 w-6" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">Event Date</h3>
+                <p className="text-gray-500 dark:text-gray-400">May 17th, 2025 - Norway's Constitution Day</p>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-norway-red/10 text-norway-red">
+                <Users className="h-6 w-6" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">Participants</h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  A gathering of 20 people celebrating Norwegian heritage
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-norway-red/10 text-norway-red">
+                <Utensils className="h-6 w-6" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">Food Style</h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Tapas-style with a variety of traditional Norwegian dishes
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-norway-red/5">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-norway-red">
+                Ready to Join the Celebration?
+              </h2>
+              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Sign up now to select which dishes you'd like to bring to our Norwegian National Day celebration.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Link href="/login">
+                <Button size="lg" className="bg-norway-red hover:bg-norway-red/90">
+                  <Flag className="mr-2 h-4 w-4" />
+                  Get Started
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
