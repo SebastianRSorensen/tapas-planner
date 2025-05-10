@@ -288,7 +288,7 @@ export function DashboardContent({
           </Card>
 
           {/* Admin Section */}
-          {isAdmin && (
+          {/* {isAdmin && (
             <Card>
               <CardHeader>
                 <CardTitle className="text-norway-blue flex items-center">
@@ -372,7 +372,7 @@ export function DashboardContent({
                 </Dialog>
               </CardContent>
             </Card>
-          )}
+          )} */}
         </div>
         {/* Høyre kolonne - Deltakere */}
         <div>
