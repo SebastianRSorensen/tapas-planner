@@ -11,7 +11,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white/20 pointer-events-none" />
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-            <div className="flex flex-col justify-center space-y-4">
+            <div className="flex flex-col justify-center space-y-4 z-50">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-norway-red/10 px-3 py-1 text-sm text-norway-red">
                   17. Mai Feiring

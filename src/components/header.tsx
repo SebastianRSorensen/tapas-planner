@@ -16,8 +16,8 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Dashboard", href: "/dashboard" },
+  { name: "Hjem", href: "/" },
+  { name: "Oversikt", href: "/dashboard" },
 ];
 
 export function Header() {
@@ -68,7 +68,7 @@ export function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuItem asChild>
-                    <Link href="/dashboard">Dashbord</Link>
+                    <Link href="/dashboard">Oversikt</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={() => signOut({ callbackUrl: "/" })}
